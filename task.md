@@ -26,9 +26,7 @@
 
 * 각자 형상관리툴에 이름과 이메일을 등록해 보자.(등록된 내용은 출력해서 붙여 넣기)
 ```console
-[본인 화면 복사]
-[샘플]
-hkit00@ubuntu:~/tinypetshop$ git config --list
+hkit07@ubuntu:~/tinypetshop$ git config --list
 core.repositoryformatversion=0
 core.filemode=true
 core.bare=false
@@ -37,7 +35,6 @@ remote.origin.url=https://github.com/luibelstudy/tinypetshop.git
 remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
 branch.master.remote=origin
 branch.master.merge=refs/heads/master
-hkit00@ubuntu:~/tinypetshop$
 ```
 
 
@@ -51,12 +48,31 @@ hkit00@ubuntu:~/tinypetshop$
 ### unit test 라이브러리 설치
 * 설치
 ```console
-$ conda install pytest
+$ pip3 install pytest
 ```
 
 * 설치 결과
 ```console
-[본인 화면 복사]
+Collecting pytest
+  Downloading pytest-5.4.3-py3-none-any.whl (248 kB)
+     |████████████████████████████████| 248 kB 244 kB/s
+Collecting packaging
+  Downloading packaging-20.4-py2.py3-none-any.whl (37 kB)
+Collecting py>=1.5.0
+  Downloading py-1.8.1-py2.py3-none-any.whl (83 kB)
+     |████████████████████████████████| 83 kB 728 kB/s
+Requirement already satisfied: attrs>=17.4.0 in /usr/lib/python3/dist-packages (from pytest) (19.3.0)
+Collecting pluggy<1.0,>=0.12
+  Downloading pluggy-0.13.1-py2.py3-none-any.whl (18 kB)
+Collecting wcwidth
+  Downloading wcwidth-0.2.4-py2.py3-none-any.whl (30 kB)
+Requirement already satisfied: more-itertools>=4.0.0 in /usr/lib/python3/dist-packages (from pytest) (4.2.0)
+Collecting pyparsing>=2.0.2
+  Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+     |████████████████████████████████| 67 kB 1.2 MB/s
+Requirement already satisfied: six in /usr/lib/python3/dist-packages (from packaging->pytest) (1.14.0)
+Installing collected packages: pyparsing, packaging, py, pluggy, wcwidth, pytest
+Successfully installed packaging-20.4 pluggy-0.13.1 py-1.8.1 pyparsing-2.4.7 pytest-5.4.3 wcwidth-0.2.4
 ```
 
 ### 테스트 파일 추가
@@ -79,11 +95,17 @@ $ pytest
 
 * 실행 결과
 ```console
-[본인 화면 복사]
+================================================= test session starts ==================================================
+platform linux -- Python 3.8.2, pytest-5.4.3, py-1.8.1, pluggy-0.13.1
+rootdir: /home/hkit07/tinypetshop
+collected 0 items
+
+================================================ no tests ran in 0.41s =================================================
+
 ```
 
 ## 2.3 수행형 과제에서 선정한 서비스에 대한 공통 모듈 구현
-[본인 화면 복사]
+![](https://github.com/Gong25/serverprogram/blob/master/board.PNG?raw=true)
 
 ## 2.4 공통 모듈에 대한 unit test 수행
 
@@ -113,7 +135,12 @@ $ pytest
 
 * 실행 결과
 ```console
-[본인 화면 복사]
+================================================= test session starts ==================================================
+platform linux -- Python 3.8.2, pytest-5.4.3, py-1.8.1, pluggy-0.13.1
+rootdir: /home/hkit07/tinypetshop
+collected 0 items
+
+================================================ no tests ran in 0.52s =================================================
 ```
 
 
@@ -126,7 +153,19 @@ $ pip3 install Flask-WTF
 ```
 * 설치 결과 
 ```console
-[본인 화면 복사]
+Collecting Flask-WTF
+  Downloading Flask_WTF-0.14.3-py2.py3-none-any.whl (13 kB)
+Requirement already satisfied: Flask in /home/hkit07/.local/lib/python3.8/site-packages (from Flask-WTF) (1.1.2)
+Collecting WTForms
+  Downloading WTForms-2.3.1-py2.py3-none-any.whl (169 kB)
+     |████████████████████████████████| 169 kB 360 kB/s
+Requirement already satisfied: itsdangerous in /home/hkit07/.local/lib/python3.8/site-packages (from Flask-WTF) (1.1.0)
+Requirement already satisfied: click>=5.1 in /usr/lib/python3/dist-packages (from Flask->Flask-WTF) (7.0)
+Requirement already satisfied: Jinja2>=2.10.1 in /usr/lib/python3/dist-packages (from Flask->Flask-WTF) (2.10.1)
+Requirement already satisfied: Werkzeug>=0.15 in /home/hkit07/.local/lib/python3.8/site-packages (from Flask->Flask-WTF) (1.0.1)
+Requirement already satisfied: MarkupSafe in /usr/lib/python3/dist-packages (from WTForms->Flask-WTF) (1.1.0)
+Installing collected packages: WTForms, Flask-WTF
+Successfully installed Flask-WTF-0.14.3 WTForms-2.3.1
 ```
 
 ### CSRF 적용
@@ -160,21 +199,21 @@ csrf = CSRFProtect(app)
 ### 작동 확인
 * 콘솔에서 확인
 ```console
-[본인 화면 복사]
-[샘플]
-hkit00@ubuntu:~/tinypetshop$ python3 app.py
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: This is a development server. Do not use it in a production deployment.
    Use a production WSGI server instead.
  * Debug mode: on
- * Running on http://0.0.0.0:5100/ (Press CTRL+C to quit)
+ * Running on http://0.0.0.0:10007/ (Press CTRL+C to quit)
  * Restarting with stat
  * Debugger is active!
- * Debugger PIN: 105-203-154
-192.168.0.1 - - [14/Jun/2020 22:48:05] "GET / HTTP/1.1" 200 -
-192.168.0.1 - - [14/Jun/2020 22:48:18] "GET /getPosts.html HTTP/1.1" 200 -
-192.168.0.1 - - [14/Jun/2020 22:48:21] "GET /getPost.html?csrf_token=IjMyMGFkN2FiYTUyNjE3OWU1NzQ5NzFkMjVmNDNhZTk0YjdhOWI4YjIi.XuapMg.855qVHuJtFJspJFU09cmP-P0lEc&no=1 HTTP/1.1" 200 -
+ * Debugger PIN: 290-386-189
+218.51.230.89 - - [15/Jun/2020 08:57:08] "GET / HTTP/1.1" 200 -
+218.51.230.89 - - [15/Jun/2020 08:57:09] "GET /static/css/common.css HTTP/1.1" 200 -
+218.51.230.89 - - [15/Jun/2020 08:57:09] "GET /static/img/kongpicture.jpg HTTP/1.1" 200 -
+218.51.230.89 - - [15/Jun/2020 08:57:09] "GET /favicon.ico HTTP/1.1" 404 -
+218.51.230.89 - - [15/Jun/2020 08:57:10] "GET /getPosts.html HTTP/1.1" 200 -
+218.51.230.89 - - [15/Jun/2020 08:57:12] "GET /getPost.html?csrf_token=IjM1YmFlZGEzODVmMjFiZmFjODFjM2FkYzVjMGNkMWMyNTIyZDljZjYi.Xuc35g.qXKaIcbfs6GDTDmZ_b4Kvf5TxAI&no=1 HTTP/1.1" 200 -
 ```
 * 브라우저에서 확인
 [본인 화면 복사]
