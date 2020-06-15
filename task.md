@@ -5,7 +5,7 @@
   - 목표 시스템 : 관리자 웹 어플리케이션 시스템
   - 환경
     - 개발 언어 : Python, SQL, HTML5, CSS3
-    - 개발 인원 및 기간 : 개발인원 : 1명, 개발 기간 : 1개월
+    - 개발 인원 및 기간 : 개발인원 - 1명, 개발 기간 - 1개월
     - 개발 HW 사양 : 프로세서 - AMD Ryzen 7 3700U 2.30 GHz / 메모리(RAM) - 16.0GB
 
 ## 1.2 개발 도구들의 역할에 대한 파악도 [p.7]
@@ -51,7 +51,7 @@ hkit00@ubuntu:~/tinypetshop$
 ### unit test 라이브러리 설치
 * 설치
 ```console
-$ pip3 install Flask
+$ conda install pytest
 ```
 
 * 설치 결과
